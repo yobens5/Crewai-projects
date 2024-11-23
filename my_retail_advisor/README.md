@@ -6,26 +6,26 @@ Welcome to the MyRetailAdvisor Crew project, powered by [crewAI](https://crewai.
 
 Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
 
-First, if you haven't already, install uv:
-
+Create python env.
 ```bash
-pip install uv
+python3 -m vent myenv
+source ./myenv/bin/activate
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
+Install crewai.
 ```bash
 crewai install
 ```
 ### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+**Add your `WATSONX` parameters into the `.env` file**
 
 - Modify `src/my_retail_advisor/config/agents.yaml` to define your agents
 - Modify `src/my_retail_advisor/config/tasks.yaml` to define your tasks
 - Modify `src/my_retail_advisor/crew.py` to add your own logic, tools and specific args
 - Modify `src/my_retail_advisor/main.py` to add custom inputs for your agents and tasks
+- Modify `src/my_retail_advisor/tool/custom_tool.py` to add custom tools for your agents and tasks
+- Modify `src/my_retail_advisor/tool/tool_helper.py` to change the custom vision tool baed on llama vision model
 
 ## Running the Project
 
@@ -42,13 +42,5 @@ This example, unmodified, will run the create a `report.md` file with the output
 ## Understanding Your Crew
 
 The my-retail-advisor Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the MyRetailAdvisor Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.

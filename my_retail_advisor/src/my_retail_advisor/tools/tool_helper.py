@@ -1,5 +1,6 @@
 import requests
 import base64
+import os
 from my_retail_advisor.auth import Auth
 
 class Helper:    
@@ -11,6 +12,8 @@ class Helper:
             encoded_image = base64.b64encode(image_file.read()).decode('utf-8')
         print(f"Processing image from file: {image_path_or_url}")
 
+        project_id = os.getenv("WATSONX_PROJECT_ID")
+
         try:
             access_token = Auth.get_ibm_token()
         except Exception as e:
@@ -19,15 +22,19 @@ class Helper:
         url = "https://us-south.ml.cloud.ibm.com/ml/v1/text/chat?version=2023-05-29"
 
         prompt = (
-            "Caption the picture with details including names and descriptions of products." 
+            "Describe this image in as much detail as possible." 
+            "Includes a list of all product names in the image." 
+            "Include disposal of products in the image."
+            "Generate a very long and detailled descritpion." 
         )
         
         body = {
-        "messages": [{"role":"user","content":[{"type":"text","text":prompt},{"type":"image_url","image_url":{"url": f"data:image/jpeg;base64,{encoded_image}"}}]}],
-        "project_id": "b20349a9-3dd5-47fd-b4ef-1b10e1f3b591",
+        "messages": [{"role":"user","content":[{"type":"image_url","image_url":{"url": f"data:image/jpeg;base64,{encoded_image}"}},
+                                               {"type":"text","text":prompt}]}],
+        "project_id": project_id,
         "model_id": "meta-llama/llama-3-2-90b-vision-instruct",
         "decoding_method": "greedy",
-        "max_tokens": 1000
+        "max_tokens": 2000
         }
         
         headers = {

@@ -24,8 +24,6 @@ class Auth:
         """
         # Retrieve the API key from the environment
         api_key = os.getenv("WATSONX_APIKEY")
-        if not api_key:
-            raise Exception("WATSONX_APIKEY not found in .env file.")
 
         # IAM endpoint and request data
         iam_endpoint = "https://iam.cloud.ibm.com/identity/token"
