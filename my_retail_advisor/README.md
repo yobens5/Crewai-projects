@@ -8,7 +8,7 @@ Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses
 
 Create python env.
 ```bash
-python3 -m vent myenv
+python3 -m venv myenv
 source ./myenv/bin/activate
 ```
 
