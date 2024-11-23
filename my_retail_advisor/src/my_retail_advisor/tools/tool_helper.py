@@ -22,10 +22,8 @@ class Helper:
         url = "https://us-south.ml.cloud.ibm.com/ml/v1/text/chat?version=2023-05-29"
 
         prompt = (
-            "Describe this image in as much detail as possible." 
-            "Includes a list of all product names in the image." 
-            "Include disposal of products in the image."
-            "Generate a very long and detailled descritpion." 
+            "Describe this image in as much detail as possible."
+            "Pay close attention to the image and use the following details in your answer: Product names, product placement, shelf issues."
         )
         
         body = {

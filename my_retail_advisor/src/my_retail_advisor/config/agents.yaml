@@ -1,6 +1,6 @@
-space_planner:
+store_manager:
   role: >
-    Store Space Planner
+    Store Manager
   goal: >
     Analyze the shelve in the physical store and provide a detailed report to the market analyst to develop a detailed action plan with the insights.
   backstory: >

@@ -15,9 +15,9 @@ class MyRetailAdvisor():
 	tasks_config = 'config/tasks.yaml'
 
 	@agent
-	def space_planner(self) -> Agent:
+	def store_manager(self) -> Agent:
 		return Agent(
-			config=self.agents_config['space_planner'],
+			config=self.agents_config['store_manager'],
 			allow_delegation=False,
 			verbose=True
 		)

@@ -7,7 +7,7 @@ analyze_shelve:
   expected_output: >
     A comprehensive report on shelve {shelve}, including visual data,
     analysis of product placement, space utilization, and any recommendations for improvement.
-  agent: space_planner
+  agent: store_manager
 
 provide_recommendations:
   description: >
@@ -32,4 +32,4 @@ create_action_plan:
   expected_output: >
     A detailed list of recomendation and action plan for rearranging and improving the {shelve} shelve according to market trends,
     including market analyst recomendations and translation into practical tasks for the Store manager and the Buyer.
-  agent: space_planner
+  agent: store_manager
