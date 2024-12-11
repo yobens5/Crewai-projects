@@ -14,6 +14,10 @@ source ./myenv/bin/activate
 
 Install crewai.
 ```bash
+cd my_retail_advisor
+```
+
+```bash
 crewai install
 ```
 ### Customizing
@@ -32,7 +36,7 @@ crewai install
 To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
 
 ```bash
-$ crewai run
+crewai run
 ```
 
 This command initializes the my-retail-advisor Crew, assembling the agents and assigning them tasks as defined in your configuration.
